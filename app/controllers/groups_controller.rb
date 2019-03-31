@@ -35,7 +35,7 @@ class GroupsController < ApplicationController
 
 	def show
 		@group = Group.find(params[:id])
-		@posts = @group.posts.recent
+		@posts = @group.posts.includes(:user).recent.paginate(page: params[:page], per_page: 7)
 	end
 
 	def destroy
