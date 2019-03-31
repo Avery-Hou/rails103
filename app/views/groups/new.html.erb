@@ -2,21 +2,5 @@
 	<h2>新增討論版</h2>
 	<hr/>
 
-	<%= form_for @group do |f| %>
-		<% if @group.errors.any? %>
-			<ul>
-				<% @group.errors.full_messages.each do |msg| %>
-				<li><%= msg %></li>
-				<% end %>
-			</ul>
-		<% end %>
-		Title:
-		<%= f.text_field :title %> <BR>
-
-		Description:
-		<%= f.text_area :description %><BR>
-
-		<%= f.submit "送出", disable_with: "submitting..." %>
-
-	<% end %>
+	<%= render "form" %>
 </div>
