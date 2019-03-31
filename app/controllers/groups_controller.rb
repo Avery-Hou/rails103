@@ -28,6 +28,13 @@ class GroupsController < ApplicationController
 		@group = Group.find(params[:id])
 	end
 
+	def destroy
+		@group = Group.find(params[:id])
+		@group.destroy
+		flash[:alert] = "delete success"
+		redirect_to groups_path
+	end
+
 	private
 	def group_params
 		params.require(:group).permit(:title, :description)
