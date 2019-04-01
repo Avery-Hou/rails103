@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+	before_action :authenticate_user!
+
 	def new
 		@post = Post.new
 		@group = Group.find(params[:group_id])
@@ -14,6 +16,12 @@ class PostsController < ApplicationController
 		else
 			render :new
 		end
+	end
+
+	def destroy
+		@post = Post.find(params[:id])
+		@post.destroy
+		redirect_to account_posts_path, notice: "刪除文章成功"
 	end
 
 
