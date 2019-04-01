@@ -4,6 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :groups
+  has_many :groups #使用者邁立的討論群
   has_many :posts
+
+  has_many :group_relationships
+  has_many :joined_groups, through: :group_relationships, source: :group  #使用者加入的討論群
 end
