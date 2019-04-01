@@ -9,4 +9,9 @@ Rails.application.routes.draw do
   	post :quit, on: :member
   end
 
+  namespace :account do
+  	resources :groups
+  	resources :posts
+  end
+
 end
