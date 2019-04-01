@@ -1,0 +1,8 @@
+<%= simple_form_for [@group, @post] do |f| %>
+	
+	<div class="form-group">
+		<%= f.input :content, label: "標題", class: "form-control" %>
+	</div>
+	<%= f.submit "送出", disable_with: "submitting...", class: "btn btn-primary" %>
+
+<% end %>
