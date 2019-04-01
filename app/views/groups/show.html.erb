@@ -3,8 +3,10 @@
 		<span>
 			<% if current_user && current_user.is_member_of?(@group) %>
 				<label class="label label-success">群組成員</label>
+				<%= link_to "退出群組", quit_group_path(@group), class: "btn btn-default" %>
 			<% else %>
 				<label class="label label-warning">不是群組成員</label>
+				<%= link_to "加入群組", join_group_path(@group), class: "btn btn-default" %>
 			<% end %>
 		</span>
 
