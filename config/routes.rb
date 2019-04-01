@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   resources :groups do
   	resources :posts
+  	post :join, on: :member
+  	post :quit, on: :member
   end
 
 end
