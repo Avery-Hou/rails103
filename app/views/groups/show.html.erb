@@ -19,7 +19,7 @@
 		<% end %>
 	</div>
 	<h2><%= @group.title %></h2>
-	<p><%= @group.description %></p>
+	<p><%= render_content(@group.description) %></p>
 
 
 	<table class="table">
@@ -33,7 +33,7 @@
 		<tbody>
 			<% @posts.each do |post| %>
 			<tr>
-				<td><%= post.content %></td>
+				<td><%= render_content(post.content) %></td>
 				<td><%= post.user.email %></td>
 				<td><%= post.created_at %></td>
 			</tr>
